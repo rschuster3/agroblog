@@ -9,13 +9,20 @@ except ImportError:
 #from app import log
 from utils.alchemy import new_alchemy_encoder
 from db import engine
-#from app.errors import NotSupportedError
+from app.errors import NotSupportedError, ServerError
 
 #LOG = log.get_logger()
 
 
 class BaseResource(object):
     HELLO_WORLD = {'message': 'hi'}
+
+    def get_session(self, req):
+        session = req.context.get('session')
+        if not session:
+            raise ServerError('Session not found.')
+    
+        return session
 
     def to_json(self, body_dict):
         return json.dumps(body_dict)
