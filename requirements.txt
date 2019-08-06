@@ -1,0 +1,6 @@
+falcon
+gunicorn
+pandas
+pytest
+sqlalchemy
+numpy
