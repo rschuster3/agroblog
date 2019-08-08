@@ -1,6 +1,9 @@
-falcon
-gunicorn
-pandas
-pytest
-sqlalchemy
-numpy
+bcrypt==3.1.6
+cryptography==2.7
+falcon==2.0.0
+gunicorn==19.9.0
+itsdangerous==1.1.0
+pandas==0.24.2
+pytest==4.6.4
+sqlalchemy==1.3.6
+numpy==1.16.4

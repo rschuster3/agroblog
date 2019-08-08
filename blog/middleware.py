@@ -1,1 +1,0 @@
-# Falcon middleware for blog

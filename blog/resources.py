@@ -30,7 +30,6 @@ class BlogDetailResource(BaseResource):
             raise BadRequestError('No data received.')
 
         blog_entry.find_update(session, blog_id, blog_data)
-        session.commit()
 
         self.on_success(res, None)
 
@@ -43,7 +42,6 @@ class BlogDetailResource(BaseResource):
             raise NotFoundError('Blog ID: {} not found.'.format(blog_id))
 
         blog_entry.delete()
-        session.commit()
 
         self.on_success(res, None)
 
@@ -69,6 +67,5 @@ class BlogListResource(BaseResource):
 
         blog_entry = BlogEntry(blog_data)
         session.add(blog_entry)
-        session.commit()
 
         self.on_success(res, None)

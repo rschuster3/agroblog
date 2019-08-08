@@ -5,7 +5,7 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlalchemy.ext.declarative import as_declarative
 
-from app.utils import alchemy
+from utils import alchemy
 
 
 @as_declarative()

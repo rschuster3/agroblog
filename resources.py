@@ -6,12 +6,9 @@ try:
 except ImportError:
     OrderedDict = dict
 
-#from app import log
 from utils.alchemy import new_alchemy_encoder
 from db import engine
-from app.errors import NotSupportedError, ServerError
-
-#LOG = log.get_logger()
+from errors import NotSupportedError, ServerError
 
 
 class BaseResource(object):
