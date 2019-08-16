@@ -2,21 +2,24 @@
 
 apt-get -y update
 
-# Install npm and node
-apt-get -y install nodejs
-apt-get -y install npm
-
 # Install system requirements
 #apt-get -y install python3-setuptools
 #easy_install3 pip  # will be a Python3 pip
-apt-get -y install python-pip
+apt-get -y install python3-pip libpq-dev
 
 # Install requirements into agro env
-pip install -r /vagrant/requirements.txt
+pip3 install -r /vagrant/requirements.txt
 
 # Install git
 apt-get -f install # take care of "unmet dependencies"
 apt-get -y install git
+
+# Install postgres
+apt-get -y install postgresql postgresql-contrib
+
+# Setup postgres user, db, and perms
+-u postgres bash -c "psql -c \"CREATE ROLE blogger SUPERUSER LOGIN PASSWORD '1arrfgtaah0ae1';\""
+-u postgres createdb blogdb
 
 # Add Virtualenv settings to .bashrc so they load on every vagrant up
 cat > /home/vagrant/.bashrc <<INIT

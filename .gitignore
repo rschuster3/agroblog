@@ -1,5 +1,7 @@
-sandbox/
+app.env
+*.pyc
 .vagrant/
-config.py
-*.ini
-TODO.md
+staticfiles/*
+*.swp
+old_blog/*
+sandbox/*
