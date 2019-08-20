@@ -4,7 +4,7 @@
     <h2>Blogs</h2>
     <ul>
         {% for blog in object_list %}
-            <li>{{ blog.title }}</li>
+	<li><a href="/blog/{{ blog.pk }}">{{ blog.title }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

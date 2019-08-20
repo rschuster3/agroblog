@@ -1,21 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from blogs.models import Blog
+from blog.models import BlogPost
 
 
 class BlogPostDetailView(DetailView):
-    model = Blog
+    model = BlogPost
+    context_object_name = 'blogpost'
     template_name = 'blog/blog_detail.html'
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
 
 
 class BlogPostListView(ListView):
-    model = Blog
+    model = BlogPost
+    context_object_name = 'blogpostlist'
     template_name = 'blog/blog_list.html'
-    queryset = Blog.objects.filter(published=True)
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+    queryset = BlogPost.objects.filter(published=True)

@@ -1,15 +1,9 @@
-- First model migration into the database (make sure the db and user are all set up)
+- https://docs.djangoproject.com/en/2.2/
 
-- Create superuser
+- Build out the UI
 
-- Test authentication
+- Split out sandbox requirements
 
 - Heroku setup
 
 - Implement comments? Would require a form.
-
-- Run localhost
-
-- Build out the UI
-
-- https://docs.djangoproject.com/en/2.2/

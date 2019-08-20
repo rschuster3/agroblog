@@ -5,3 +5,5 @@ staticfiles/*
 *.swp
 old_blog/*
 sandbox/*
+static/*
+media/*
