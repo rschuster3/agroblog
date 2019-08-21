@@ -1,9 +1,13 @@
-from django.shortcuts import render
-from django.views import View
+from django.views.generic import ListView
+
+from blog.models import BlogPost
 
 
-class HomeView(View):
+class HomeView(ListView):
+    context_object_name = 'topposts'
     template_name = 'index.html'
 
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+    def get_queryset(self):
+        # Get the latest 3 blogs
+        queryset = BlogPost.objects.filter(published=True).order_by('-published_date')
+        return queryset[:3]

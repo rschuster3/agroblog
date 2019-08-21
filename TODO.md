@@ -2,6 +2,8 @@
 
 - Build out the UI
 
+- Links to uploaded images
+
 - Split out sandbox requirements
 
 - Heroku setup
