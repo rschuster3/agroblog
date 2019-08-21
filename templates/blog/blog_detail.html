@@ -1,9 +1,52 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ blogpost.title }}</h1>
-    <p>{{ blogpost.tagline }}</p>
-    <p>Author: {{ blogpost.author }}</p>
-    <p>Published: {{ blogpost.published_date|date }}</p>
-    <p>Body: {{ blogpost.body }}</p>
+  <div class="row">
+
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+      <!-- Title -->
+      <h1 class="mt-4">{{ blogpost.title }}</h1>
+
+      <!-- Author -->
+      <p class="lead">
+        by
+	<a href="#">{{ blogpost.author }}</a>
+      </p>
+
+      <hr>
+
+      <!-- Date/Time -->
+      <p>Posted on {{ blogpost.published_date|date }}</p>
+
+      <hr>
+
+      <!-- Preview Image -->
+      <img class="img-fluid rounded" src="{{ blogpost.header_image }}" alt="">
+
+      <hr>
+
+      <!-- Post Content -->
+      {{ blogpost.body }}
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 {% endblock %}
